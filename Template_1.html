@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="icon/x-image" href="Background-images/S-removebg-preview.png">
+    <script src="https://kit.fontawesome.com/5295537e26.js" crossorigin="anonymous"></script>
+    <title>One Direction</title>
+    <script src="https://kit.fontawesome.com/5295537e26.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            font-family: Arial, Helvetica, sans-serif;
+            list-style-type: none;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            position: relative;
+            background-color: white;
+        }
+
+        header {
+            width: 100%;
+            height: 800px;
+            background-image: url(Background-Images/la.jpg);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .navbar {
+            position: fixed;
+            width: 100%;
+            background-color: black;
+            z-index: 1000;
+            overflow: hidden;
+            box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 
+                        0 2px 10px 0 rgba(0,0,0,0.12);
+        }
+
+        .navbar ul li {
+            display: inline-block;
+        }
+
+        .navbar ul li a {
+            color: white;
+            display: block;
+            padding: 15px 20px;
+            font-size: 16px;
+            text-align: center;
+            text-transform: uppercase;
+            border: none;
+        }
+
+        .navbar ul li a:hover {
+            color: black;
+            background-color: rgb(216, 214, 214);
+        }
+
+        .dropdown {
+            display: none;
+            min-width: 160px;
+            z-index: inherit;
+            background-color: rgb(255, 254, 254);
+            position: absolute;
+            top: 49px;
+            left: 390.9px;
+            box-shadow: 6px 6px 16px rgb(0, 0, 0);
+        }
+
+        .dropdown a {
+            color: black;
+            display: block;
+            padding: 10px 10px !important;
+            text-align: left !important;
+            font-size: 16px !important;
+            text-transform: capitalize !important;
+        }
+
+        .more:hover .dropdown {
+            display: block;
+        }
+
+        .more:hover .dropdown a {
+            color: black;
+        }
+
+        .more:hover .dropbtn {
+            background-color: rgb(212, 207, 207);
+            color: black;
+        }
+
+        .search {
+            float: right;
+        }
+
+        .search a:hover {
+            background-color: red !important;
+            color: white !important;
+        }
+
+        .center {
+            position: relative;
+            width: 100%;
+        }
+
+        .article {
+            position: absolute;
+            bottom: 0%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+        }
+
+        .center2 {
+            padding-top: 50px;
+            padding-bottom: 70px;
+        }
+
+        .content1 {
+            max-width: 800px;
+            text-align: justify;
+            margin: 0 auto;
+        }
+
+        .content1 h1, p {
+            text-align: center;
+            line-height: 2em;
+        }
+
+        .content1 .para1 {
+            line-height: 1.5em;
+            font-size: 15px;
+            margin-top: 15px;
+            padding: 15px;
+        }
+
+        .images {
+            display: flex;
+            max-width: 900px;
+            margin: 0 auto;
+            padding-bottom: 100px;
+        }
+
+        @media screen and (max-width: 540px) {
+            .images {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .item {
+                margin: 0 auto;
+            }
+        }
+
+        .item {
+            text-align: center;
+            padding: 0 40px;
+            max-width: 300px;
+        }
+
+        .item p {
+            padding-bottom: 10px;
+        }
+
+        .item img {
+            border-radius: 4px;
+            display: block;
+        }
+
+        
+        .tour {
+            width: 100%;
+            background-color: black;
+            overflow: hidden;
+        }
+
+        .tour .heading {
+            width: 100%;
+            text-align: center;
+            line-height: 4em;
+            color: white;
+            padding-bottom: 30px;
+            padding-top: 70px;
+        }
+        
+        .tour .table {
+            width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            color: rgb(104, 101, 101);
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td {
+            padding: 10px 10px;
+            text-align: left;
+        }
+
+        table tr {
+            border-bottom: 1px solid rgb(220, 213, 213);
+        }
+
+        @media screen and (max-width: 800px) {
+            .tour .table {
+                width: 500px;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .tour .table {
+                width: 300px;
+            }
+        }
+
+        @media screen and (max-width:910px) {
+            .three {
+                flex-direction: column;
+                width: 100% !important;
+            }
+
+            .three1 {
+                width: 60% !important;
+                margin: 10px auto !important;
+            }
+        }
+
+        .three {
+            width: 810px;
+            display: flex;
+            flex-wrap: nowrap;
+            margin: 0 auto;
+            padding-top: 40px;
+            padding-bottom: 120px;
+        }
+
+        .three1 {
+            width: 33.33%;
+            background-color: white;
+            margin: 0 6px;
+            box-shadow: 0px 0px 6px rgb(163, 163, 163);
+        }
+
+        .three1 img {
+            opacity:  1;
+        }
+
+        .three1 img:hover {
+            opacity: 0.7;
+        }
+
+        .three1_1 p {
+            text-align: left !important;
+            padding: 10px;
+        }
+
+        .button {
+            padding: 12px 12px;
+        }
+
+
+        .btn {
+            font-size: 17px;
+            border: none;
+            background-color: black;
+            color: white;
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: rgb(214, 210, 210);
+            color: black;
+        }
+
+        .contact {
+            width: 100%;
+            margin-bottom: 70px;
+        }
+
+        .contact h1 {
+            text-align: center;
+            padding-top: 100px;
+            padding-bottom: 10px;
+        }
+
+        .center3 {
+            display: flex;
+            width: 900px;
+            margin: 0 auto;
+            margin-top: 40px;
+        }
+
+        @media screen and (max-width:800px) {
+            .center3 {
+                flex-direction: column;
+                width: 100%;
+                justify-content: center;
+                margin-top: 10px;
+            }
+
+            .one {
+                text-align: center;
+                margin-bottom: 23px !important;
+                margin: 0 auto;
+                margin-top: 15px !important;
+                padding: 0px !important;
+                width: 310px !important;
+            }
+
+            .inputs {
+                margin: 0 auto !important;
+                width: 100%;
+            }
+            
+        }
+
+        @media screen and (max-width:500px) {
+            .inputs {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .inputs input {
+                width: 100% !important;
+            }
+
+            .inputs input[type=submit] {
+                margin-top: 0px !important;
+            }
+
+            #message {
+                margin-top: -12px;
+            }
+        }
+
+
+        .one {
+            width: 400px;
+            display: flex;
+            padding: 8px;
+        }
+
+        .icons li {
+            padding: 7px 0px;
+            margin-right: 15px;
+        }
+
+        .address {
+            display: inline-block;
+        }
+
+        .address p {
+            text-align: left;
+        }
+
+        .inputs {
+            max-width: 370px;
+        }
+
+        .inputs input[type=text], input[type=email] {
+            width: 170px;
+            padding: 10px;
+            border: 1px solid rgb(177, 173, 173);
+            outline: none;
+            margin-right: 7px;
+            margin-bottom: 4px;
+            font-size: 16px;
+        }
+
+        #message {
+            width: 352px;
+        }
+
+        input[type=submit] {
+            border: none;
+            background-color: black;
+            color: white;
+            font-size: 16px;
+            padding: 10px 15px;
+            text-transform: uppercase;
+        }
+
+
+        input[type=submit]:hover {
+            background-color: rgb(205, 199, 199);
+            color: rgb(0, 0, 0);
+        }
+
+        .last-icons {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding-top: 70px;
+        }
+
+        .last-icons i {
+            font-size: 24px;
+            padding: 10px 4px;
+            cursor: pointer;
+        }
+
+        .last-icons i:hover {
+            color: rgb(71, 16, 255);
+        }
+
+        .last {
+            text-align: center;
+            padding-top: 20px;
+            padding-bottom: 70px;
+            color: gray;
+        }
+
+        .last a {
+            text-decoration: underline;
+        }
+
+        .tglmain {
+            position: relative;
+            width: 100%;
+            height: 52px;
+            background-color: rgb(0, 0, 0);
+            box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 
+                        0 2px 10px 0 rgba(0,0,0,0.12);
+            display: none;
+        }
+
+        .togglebtn {
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            width: 100%;
+        }
+
+        .togglebtn button {
+            background-color: transparent;
+            border: none;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            outline: none;
+        }
+
+        @media screen and (max-width: 600px) {
+            .tglmain {
+                display: block;
+            }
+            .navbar ul li  {
+                display: none;
+            }
+        }
+
+        .navdrop {
+            width: 160px;
+            background-color: white;
+            z-index: 1000;
+            position: fixed;
+            top: 50px;
+            left: 14px;
+            box-shadow: 0px 0px 6px white;
+            display: none;
+        }
+
+        .navdrop li a {
+            display: block;
+            font-size: 18px !important;
+            text-align: center;
+            padding: 10px 0px;
+            color: black;
+            border-bottom: 1px solid rgb(209, 209, 209);
+        }
+
+        .navdrop li a:hover {
+            background-color: rgb(216, 216, 216);
+            color: black;
+        }
+
+        .closebtn  {
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            width: 100%;
+            display: none;
+        }
+
+        .closebtn button {
+            background-color: transparent;
+            border: none;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <header id="Home">
+        <nav class="navbar">
+            <ul>
+                <li><a href="#Home">Home</a></li>
+                <li><a href="#Band">Band</a></li>
+                <li><a href="#tour">Tour</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li class="more"><a href="" class="dropbtn">More <i class="fa-solid fa-caret-down"></i></a>
+                    <div class="dropdown">
+                        <a href="">Merchandise</a>
+                        <a href="">Extras</a>
+                        <a href="">More</a>
+                    </div>
+                </li>
+                <li class="search"><a href=""><i class="fa-solid fa-magnifying-glass"></i></a></li>
+            </ul>
+
+            <div class="tglmain">
+                <div class="togglebtn" id="tglbtn">
+                    <button onclick="tglbtn()"><i class="fa-solid fa-bars" id="btns"></i>
+                    </button>
+                </div>
+                <div class="closebtn" id="closebtn">
+                    <button onclick="closebtn()"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+            </div>
+
+    </header>
+
+    <div class="navdrop" id="navdrop">
+        <li><a href="#Home">Home</a></li>
+        <li><a href="#Band">Band</a></li>
+        <li><a href="#tour">Tour</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </div>
+
+    <div class="center">
+        <div class="article">
+            <h2 style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Los Angeles</h2>
+            <p style="font-family: Verdana, Geneva, Tahoma, sans-serif !important; font-size: 14px;">We had the best time playing in Venice Beach!</p>
+        </div>
+    </div>
+<div class="center2" id="Band">
+    <div class="content1">
+        <h1>THE BAND</h1>
+        <p style="color: gray; font-style: italic;">We love music</p>
+        <div class="para1">We have created a fictional band website. Lorem ipsum dolor sit amet
+             consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
+             et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+             nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate veli
+             t esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt i
+             n culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod te
+             mpor incididunt ut labore et dolore magna aliqua.
+           Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+    </div>
+</div>
+
+<div class="images">
+    <div class="item">
+        <p>Shihab</p>
+        <img src="Background-images/Shihab.jpg" width="100%" height="auto">
+    </div>
+    <div class="item">
+        <p>Shihab</p>
+        <img src="Background-images/Shihab.jpg" width="100%" height="auto">
+    </div>
+    <div class="item">
+        <p>Shihab</p>
+        <img src="Background-images/Shihab.jpg" width="100%" height="auto">
+    </div>
+</div>
+
+<div class="tour" id="tour">
+    <div class="heading">
+        <h1>TOUR DATES</h1>
+        <p style="color: gray;font-style: italic;">Don't forget to book your tickets!</p>
+    </div>
+    <table class="table">
+        <tr>
+            <td>September <span style="background-color: red; color: white; padding: 5px; margin-left: 10px;">Sold out</span></td>
+        </tr>
+        <tr>
+            <td>October <span style="background-color: red; color: white; padding: 5px; margin-left: 10px;">Sold out</span></td>
+        </tr>
+        <tr>
+            <td>November <span style="float: right; background-color: black; color: white; border-radius: 50%; padding: 5px 8px; vertical-align: middle; margin-right: 20px;">3</span></td>
+        </tr>
+        
+    </table>
+
+    <div class="three">
+        <div class="three1">
+            <img src="Background-Images/bg3.jpg" width="100%" height="200px">
+            <div class="three1_1">
+                <p style="font-weight: bold !important;">New York</p>
+                <p style="color: gray; font-size: 15px;">Fri 27 Nov 2016</p>
+                <p style="line-height: 1.5em;">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+                <div class="button">
+                    <button type="button" class="btn">Buy Tickets</button>
+                </div>
+            </div>
+        </div>
+        <div class="three1">
+            <img src="Background-Images/bg5.jpg" width="100%" height="200px">
+            <div class="three1_1">
+                <p style="font-weight: bold !important;">Paris</p>
+                <p style="color: gray; font-size: 15px;">Sat 28 Nov 2016</p>
+                <p style="line-height: 1.5em;">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+                <div class="button">
+                    <button type="button" class="btn">Buy Tickets</button>
+                </div>
+            </div>
+        </div>
+        <div class="three1">
+            <img src="Background-Images/lofoten-7967448.jpg" width="100%" height="200px">
+            <div class="three1_1">
+                <p style="font-weight: bold !important;">San Francisco</p>
+                <p style="color: gray; font-size: 15px;">Fri 27 Nov 2016</p>
+                <p style="line-height: 1.5em;">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+                <div class="button">
+                    <button type="button" class="btn">Buy Tickets</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="contact" id="contact">
+    <h1>CONTACT</h1>
+    <P style="color: gray; font-style: italic;">Fan? Drop a note!</P>
+ <div class="center3">
+    <div class="one">
+        <div class="icons">
+            <li><i class="fa-solid fa-location-dot"></i></li>
+            <li><i class="fa-solid fa-phone"></i></li>
+            <li><i class="fa-solid fa-envelope"></i></li>
+        </div>
+        <div class="address">
+            <p>Chicago, US</p>
+            <p>Phone: +00 151515</p>
+            <p>Email: mail@mail.com</p>
+        </div>
+    </div>
+
+    <div class="inputs">
+        <input type="text" id="name" placeholder="Name">
+        <input type="email" id="email" placeholder="Email">
+        <br>
+        <input type="text" id="message" placeholder="Message">
+        <br>
+        <input type="submit" value="Send">
+    </div>
+
+ </div>
+</div>
+
+<div class="bigimg">
+    <img src="Background-Images/map.jpg" width="100%" height="auto">
+</div>
+
+
+<div class="last-icons">
+    <i class="fa-brands fa-square-facebook"></i>
+    <i class="fa-brands fa-instagram"></i>
+    <i class="fa-brands fa-square-snapchat"></i>
+    <i class="fa-brands fa-pinterest-p"></i>
+    <i class="fa-brands fa-twitter"></i>
+    <i class="fa-brands fa-linkedin"></i>
+</div>
+
+<div class="last">
+  &copy; W3School.com || Designed by Developer Shihab.
+</div>
+
+<script>
+    function tglbtn() {
+        document.getElementById("navdrop").style.display = "block";
+        document.getElementById("tglbtn").style.display = "none";
+        document.getElementById("closebtn").style.display = "block";
+    }
+
+    function closebtn() {
+        document.getElementById("navdrop").style.display = "none";
+        document.getElementById("tglbtn").style.display = "block";
+        document.getElementById("closebtn").style.display = "none";
+    }
+</script>
+</body>
+</html>
+
+<!-- Completed -->
